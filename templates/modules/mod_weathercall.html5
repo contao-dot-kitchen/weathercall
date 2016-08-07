@@ -1,0 +1,13 @@
+<?php $this->extend('block_unsearchable'); ?>
+
+<?php $this->block('content'); ?>
+
+<div class="weather-widget">
+    <div class="weather-location"><?=$this->city; ?></div>
+    <div class="weather-data">
+	<figure class="weather-icon"><img src="<?=$this->icon; ?>"></figure>
+	<span class="weather-temperature"><?=$this->temperature; ?> °C</span>
+    </div>
+</div>
+
+<?php $this->endblock(); ?>

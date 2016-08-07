@@ -1,0 +1,21 @@
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    }
+}
+
+function showPosition(position) {
+    $.ajax({
+	method: "GET",
+	url: "system/modules/weathercall/ajax/ajax.php",
+	data: { id: <?=$this->id; ?>, isAjax: 1, lat: position.coords.latitude, lon: position.coords.longitude },
+	dataType: "xml",
+	success: function(data) {
+		$(".weather-location").html($(data).find("city").text());
+		$(".weather-temperature").html($(data).find("temperature").text() + " °C");
+		$(".weather-icon").html("<img src=\"" + $(data).find("icon").text() + "\">");
+	}
+    });
+}
+
+getLocation();
