@@ -3,11 +3,12 @@
 ClassLoader::addNamespaces(array
 (
 	'CDK',
+	'CDK\FMD'
 ));
 
 ClassLoader::addClasses(array
 (
-	'CDK\ModuleWeatherCall' => 'system/modules/weathercall/modules/ModuleWeatherCall.php'
+	'CDK\FMD\ModuleWeatherCall' => 'system/modules/weathercall/modules/ModuleWeatherCall.php'
 ));
 
 TemplateLoader::addFiles(array

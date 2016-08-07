@@ -1,6 +1,6 @@
 <?php
 
-namespace CDK;
+namespace CDK\FMD;
 
 class ModuleWeatherCall extends \Module
 {
